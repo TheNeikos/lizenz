@@ -4,6 +4,8 @@
 name = "lizenz"
 version = "0.1.0"
 edition = "2024"
+description = "A license checker for your source code"
+repository = "https://github.com/TheNeikos/lizenz"
 
 [dependencies]
 camino = "1.1.10"
