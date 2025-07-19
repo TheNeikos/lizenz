@@ -1,6 +1,4 @@
-// Marcel Müller © 2025
-//
-// Licensed under the EUPL
+// © Marcel Müller 2025, licensed under the EUPL
 
 use std::collections::HashMap;
 use std::io::Write;
@@ -17,7 +15,6 @@ use miette::miette;
 use serde::Deserialize;
 use tracing::debug;
 use tracing::error;
-use tracing::info;
 use tracing::warn;
 use tracing_subscriber::EnvFilter;
 use tree_sitter_language::LanguageFn;

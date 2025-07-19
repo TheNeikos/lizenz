@@ -1,6 +1,5 @@
-# Marcel Müller © 2025
-#
-# Licensed under the EUPL
+# © Marcel Müller 2025, licensed under the EUPL
+
 imports_granularity = "Item"
 reorder_imports = true
 group_imports = "StdExternalCrate"
