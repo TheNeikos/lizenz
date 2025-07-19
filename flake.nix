@@ -14,6 +14,15 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+    cargo-changelog = {
+      url = "github:matthiasbeyer/cargo-changelog";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+        crane.follows = "crane";
+        rust-overlay.follows = "rust-overlay";
+      };
+    };
   };
 
   outputs =
@@ -90,6 +99,8 @@
           nativeBuildInputs = [
             rustfmt'
             rustTarget
+
+            inputs.cargo-changelog.packages."${system}".default
           ];
 
           TREE_SITTER_GRAMMARS = pkgs.tree-sitter.withPlugins (_: pkgs.tree-sitter.allGrammars);

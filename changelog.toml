@@ -1,0 +1,78 @@
+# Configuration for cargo-changelog
+
+#
+# unimplemented
+#
+add_version_date = true
+
+#
+# The directory where the changelog fragments and other data will be stored.
+# Relative to repository root.
+#
+fragment_dir = ".changelogs"
+
+#
+# The path to the template file, relative to `fragment_dir`
+#
+template_path = "template.md"
+
+#
+# Whether to edit the header data when opening $EDITOR for a new changelog
+# fragment
+#
+edit_data = true
+
+#
+# The format to edit the header with.
+# Possible values: "toml"
+#
+# Right now, only "toml" is supported
+#
+edit_format = "toml"
+
+# Set whether and how to use git after creating a new entry
+#
+# Possible values are "add" or "commit" (or none, which is default).
+#
+# "add" means only git-add the newly created file
+# "commit" means commit the newly created file as well, with a default message
+#
+# Not enabling this setting means that no action will be taken
+#git = "commit"
+
+# The commit message to use if `git = "commit"` is set.
+#
+# Can also be set if `git = "add"` is configured, because the CLI might override this
+# setting.
+#git_commit_message = "Create new changelog entry"
+
+# Use the --signoff flag when calling "git-commit"
+# Defaults to false, because we cannot decide whether you want to signoff
+git_commit_signoff = false
+
+#
+# The header fields that each fragment can have
+#
+# Format:
+#
+# ```
+# <header field name> = { type = "<type>", required = <bool>, default_value = <data> }
+# ```
+#
+# The `default_value` key is optional.
+# Possible values for `type` are "bool", "int", "string", "list", "map"
+# Possible values for `data` are "bool", "int", "string", "list", "map"
+#
+
+# Require a "subject" in the header.
+# The text serves as a more detailed explanation
+[header_fields.subject]
+type = "string"
+required = true
+
+# A header field named "type"
+# With three possible values: "Bugfix", "Feature" or "Misc"
+# which is optional
+[header_fields.type]
+type = ["Bugfix", "Feature"]
+required = false
